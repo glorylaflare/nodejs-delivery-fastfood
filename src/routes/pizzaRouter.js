@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const PizzaController = require("../controllers/PizzaController".js);
+const PizzaController = require("../controllers/PizzaController.js");
 
 const pizzaController = new PizzaController();
 const router = Router();

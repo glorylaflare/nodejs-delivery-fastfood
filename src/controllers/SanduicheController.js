@@ -1,5 +1,5 @@
 const Controller = require("./Controller.js");
-const SanduicheServices = require("../services/SanduicheService.js");
+const SanduicheServices = require("../services/SanduicheServices.js");
 
 const sanduicheServices = new SanduicheServices();
 
