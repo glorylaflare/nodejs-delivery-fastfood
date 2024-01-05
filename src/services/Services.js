@@ -15,6 +15,18 @@ class Services {
         return dataSource[this.model].findByPk(id);
     };
 
+    //Método GET para selecionar por limite de 3 em 3
+    async pegaTresRegistros(page) {
+        const skip = page * 3
+        return dataSource[this.model].findAll({ limit: 3, offset: skip });
+    };
+
+    //Método GET para selecionar por limite de 4 em 4
+    async pegaQuatroRegistros(page) {
+        const skip = page * 4
+        return dataSource[this.model].findAll({ limit: 4, offset: skip });
+    };
+
     //Método POST criando um registro na tabela do modelo
     async criaRegistro(dadosDoRegistro) {
         return dataSource[this.model].create(dadosDoRegistro);
