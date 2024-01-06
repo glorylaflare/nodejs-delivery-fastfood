@@ -4,7 +4,7 @@ const BebidaController = require("../controllers/BebidaController.js");
 const bebidaController = new BebidaController();
 const router = Router();
 
-router.get('/bebidas', (req, res) => bebidaController.pegaTodos(req, res))
+router.get('/bebidas', (req, res) => bebidaController.pegaRegistros(req, res))
       .get('/bebidas/:id', (req, res) => bebidaController.pegaPorId(req, res))
       .get('/bebidas/p3/:page', (req, res) => bebidaController.pegaTres(req, res))
       .get('/bebidas/p4/:page', (req, res) => bebidaController.pegaQuatro(req, res))

@@ -4,7 +4,7 @@ const PizzaController = require("../controllers/PizzaController.js");
 const pizzaController = new PizzaController();
 const router = Router();
 
-router.get('/pizzas', (req, res) => pizzaController.pegaTodos(req, res))
+router.get('/pizzas', (req, res) => pizzaController.pegaRegistros(req, res))
       .get('/pizzas/:id', (req, res) => pizzaController.pegaPorId(req, res))
       .get('/pizzas/p3/:page', (req, res) => pizzaController.pegaTres(req, res))
       .post('/pizzas', (req, res) => pizzaController.criaNovoRegistro(req, res))

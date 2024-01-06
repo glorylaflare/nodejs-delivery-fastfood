@@ -4,7 +4,7 @@ const SanduicheController = require("../controllers/SanduicheController.js");
 const sanduicheController = new SanduicheController();
 const router = Router();
 
-router.get('/sanduiches', (req, res) => sanduicheController.pegaTodos(req, res))
+router.get('/sanduiches', (req, res) => sanduicheController.pegaRegistros(req, res))
       .get('/sanduiches/:id', (req, res) => sanduicheController.pegaPorId(req, res))
       .post('/sanduiches', (req, res) => sanduicheController.criaNovoRegistro(req, res))
       .put('/sanduiches/:id', (req, res) => sanduicheController.atualizaUmRegistro(req, res))

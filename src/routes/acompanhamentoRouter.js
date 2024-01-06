@@ -4,7 +4,7 @@ const AcompanhamentoController = require("../controllers/AcompanhamentoControlle
 const acompanhamentoController = new AcompanhamentoController();
 const router = Router();
 
-router.get('/acompanhamentos', (req, res) => acompanhamentoController.pegaTodos(req, res))
+router.get('/acompanhamentos', (req, res) => acompanhamentoController.pegaRegistros(req, res))
       .get('/acompanhamentos/:id', (req, res) => acompanhamentoController.pegaPorId(req, res))
       .get('/acompanhamentos/p3/:page', (req, res) => acompanhamentoController.pegaTres(req, res))
       .post('/acompanhamentos', (req, res) => acompanhamentoController.criaNovoRegistro(req, res))
