@@ -6,8 +6,9 @@ class Services {
     };
     //Métodos genéricos que são flexíveis a ser utilizado em quaisquer tabelas do banco de dados
     //Método GET all, pegando todos os registro da tabela do modelo
-    async pegaTodosOsRegistros() {
-        return dataSource[this.model].findAll({ 
+    async pegaTodosOsRegistros(where = {}) {
+        return dataSource[this.model].findAll({
+            where: { ...where }, 
             order: [
                 ['id', 'ASC']
               ],
