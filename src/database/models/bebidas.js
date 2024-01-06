@@ -9,10 +9,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Bebidas.init({
-    nome: DataTypes.STRING,
-    tipo: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    tipo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     descricao: DataTypes.STRING,
-    preco: DataTypes.DECIMAL,
+    preco: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     tamanho: DataTypes.INTEGER,
     calorias: DataTypes.INTEGER,
     peso: DataTypes.INTEGER,

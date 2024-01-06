@@ -9,9 +9,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Sanduiches.init({
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     descricao: DataTypes.STRING,
-    preco: DataTypes.DECIMAL,
+    preco: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     calorias: DataTypes.INTEGER,
     peso: DataTypes.INTEGER,
     imagem_url: DataTypes.STRING

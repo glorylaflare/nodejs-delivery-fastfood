@@ -9,10 +9,25 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Acompanhamentos.init({
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     descricao: DataTypes.STRING,
-    preco: DataTypes.DECIMAL,
-    tamanho: DataTypes.STRING,
+    preco: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    tamanho: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: {
+          args: [1,1],
+          msg: "o campo tamanho deve conter no máximo 1 caracter"
+        }
+      }
+    },
     calorias: DataTypes.INTEGER,
     peso: DataTypes.INTEGER,
     imagem_url: DataTypes.STRING
