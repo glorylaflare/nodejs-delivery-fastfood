@@ -3,10 +3,22 @@ class Controller {
         this.entidadeService = entidadeService;
     };
 
-    async pegaTodos(req, res) {
+    async pegaRegistros(req, res) {
+        const { name, size } = req.query;
+        const where = {};
+
+        name ? where.nome = {} : null;
+        size ? where.tamanho = {} : null;
+
+        if(name) where.nome = name;
+        else null;
+
+        if(size) where.tamanho = size;
+        else null;
+
         try {
-            const listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros();
-            return res.status(200).json(listaDeRegistro);
+            const listaPorNome = await this.entidadeService.pegaTodosOsRegistros(where);
+            return res.status(200).json(listaPorNome);
         } catch (error) {
             return res.status(500).json({
                 mensagem: `Falhou!...${error.message}`
