@@ -3,6 +3,7 @@ const pizza = require("./pizzaRouter.js");
 const sanduiche = require("./sanduicheRouter.js");
 const bebida = require("./bebidaRouter.js");
 const acompanhamento = require("./acompanhamentoRouter.js");
+const combo = require("./comboRouter.js");
 const cors = require("cors");
 
 module.exports = app => {
@@ -16,5 +17,6 @@ module.exports = app => {
         sanduiche,
         bebida,
         acompanhamento,
+        combo,
     );
 };
