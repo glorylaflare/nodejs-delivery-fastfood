@@ -38,18 +38,6 @@ class Controller {
         }
     };
 
-    async pegaQuatro(req, res) {
-        const { page } = req.params;
-        try {
-            const listaComQuatroRegistros = await this.entidadeService.pegaQuatroRegistros(Number(page));
-            return res.status(200).json(listaComQuatroRegistros);
-        } catch (error) {
-            return res.status(500).json({
-                mensagem: `Falhou!...${error.message}`
-            });   
-        }
-    };
-
     async criaNovoRegistro(req, res) {
         const dados = req.body;
         try {
